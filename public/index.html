@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
@@ -12,6 +11,7 @@
 -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <script type="text/javascript">
         var accounts = [
@@ -94,32 +94,44 @@
         }
 
     </script>
+
+    <!-- PENDO SNIPPET GOES HERE!  -->
     <script>
         (function (apiKey) {
             (function (p, e, n, d, o) {
-                var v, w, x, y, z; o = p[d] = p[d] || {}; o._q = o._q || [];
-                v = ['initialize', 'identify', 'updateOptions', 'pageLoad', 'track']; for (w = 0, x = v.length; w < x; ++w)(function (m) {
+                var v, w, x, y, z; o = p[d] = p[d] || {}; o._q = [];
+                v = ['initialize', 'identify', 'updateOptions', 'pageLoad']; for (w = 0, x = v.length; w < x; ++w)(function (m) {
                     o[m] = o[m] || function () { o._q[m === v[0] ? 'unshift' : 'push']([m].concat([].slice.call(arguments, 0))); };
                 })(v[w]);
                 y = e.createElement(n); y.async = !0; y.src = 'https://cdn.pendo.io/agent/static/' + apiKey + '/pendo.js';
                 z = e.getElementsByTagName(n)[0]; z.parentNode.insertBefore(y, z);
             })(window, document, 'script', 'pendo');
-
-            // Call this whenever information about your visitors becomes available
-            // Please use Strings, Numbers, or Bools for value types.
-            pendo.initialize({
-                visitor: {
-                    id: visitorParam || visitor || 'VISITOR-UNIQUE-ID',
-                    role: role || 'user'
-                },
-
-                account: {
-                    id: accountParam || account_id
-                }
-            });
         })('b5a0922b-701b-4f43-6293-65570fda0729');
     </script>
-    <!-- PENDO SNIPPET GOES HERE!  -->
+
+    <script>
+        // This will add a type attribute of image for any image badges
+        // Additionally, it will:
+        //  1) If the badge is the RC, add the alt-text "Resource Center"
+        //  2) If the badge has a string in the guide name within #[ ], then make the
+        //     alt-text that string
+        //  3) Otherwise, just default the alt-text to "tooltip badge"
+
+        pendo.initialize({
+            visitor: {
+                id: visitorParam || visitor || 'VISITOR-UNIQUE-ID',
+                role: role || 'user'
+            },
+
+            account: {
+                id: accountParam || account_id
+            }
+        }
+        );
+    </script>
+
+
+
     <!-- DON'T FORGET PROPER METADATA! -->
 
     <!--
@@ -136,9 +148,10 @@ Learn how to configure a non-root public URL by running `npm run build`.
 
 <body>
     <noscript>
-        You need to enable JavaScript to run this app.
+        You'll need to enable JavaScript to run this app.
     </noscript>
     <div id="root"></div>
+
     <!--
     This HTML file is a template.
     If you open it directly in the browser, you will see an empty page.
