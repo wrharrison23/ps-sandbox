@@ -1,0 +1,78 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name="theme-color" content="#000000"><link rel="manifest" href="/ps-sandbox/manifest.json"><link rel="shortcut icon" href="/ps-sandbox/favicon.ico"><script defer="defer" src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script><script type="text/javascript">var accounts = [
+    "Stark Industries",
+    "Wayne Enterprises",
+    "Hooli",
+    "Dunder Mifflin US",
+    "Willy Wonka Industrial",
+    "Pied Piper",
+    "Dunder Mifflin EU",
+    "Associated Strategies",
+    "Krusty Krab",
+    "Sterling Cooper"
+];
+
+let month = new Date().getMonth()
+let weight;
+
+if (month % 2) {
+    weight = [ 300, 175, 125, 100, 75, 75, 50, 50, 25, 25 ];
+} else {
+    weight = [ 300, 25, 50, 50, 75, 75, 100, 125, 175, 25 ];
+}
+
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+
+    var cleanName = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + cleanName + '(=([^&#]*)|&|#|$)');
+    var results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+let accountParam = getParameterByName('accountId');
+let visitorParam = getParameterByName('visitorId');
+
+function pickUsingWeights(items, weights) {
+    var total = 0;
+    var ranges = weights.slice(0);
+
+    for(var i = 0, len = weights.length; i < len; i++) {
+        ranges[i] = [total, total += ranges[i]];
+    }
+    var randomNumber = parseInt(Math.random() * total);
+    for(;randomNumber < ranges[--i][0];);
+    return items[i];
+}
+
+var account_id = pickUsingWeights(accounts, weight);
+
+let accString = account_id.replace(/\s/g, '');
+let randNum = Math.random() * 100;
+let visitor;
+let role;
+
+if (randNum < 25) {
+    visitor = 'visitor1@' + accString + '.com';
+    role = 'admin';
+} else if (randNum <= 50) {
+    visitor = 'visitor6@' + accString + '.com';
+    role = 'admin';
+} else if (randNum <= 65) {
+    visitor = 'visitor4@' + accString + '.com';
+    role = 'user';
+} else if (randNum <= 80) {
+    visitor = 'visitor7@' + accString + '.com';
+    role = 'user';
+} else if (randNum <= 90) {
+    visitor = 'visitor5@' + accString + '.com';
+    role = 'user';
+} else if (randNum <= 95) {
+    visitor = 'visitor3@' + accString + '.com';
+    role = 'read-only';
+} else {
+    visitor = 'visitor2@' + accString + '.com';
+    role = 'read-only';
+}</script><script>!function(t,i,e,n,a){var o,c,r,s,d;for((a=t[n]=t[n]||{})._q=a._q||[],c=0,r=(o=["initialize","identify","updateOptions","pageLoad","track"]).length;c<r;++c)!function(t){a[t]=a[t]||function(){a._q[t===o[0]?"unshift":"push"]([t].concat([].slice.call(arguments,0)))}}(o[c]);(s=i.createElement(e)).async=!0,s.src="https://cdn.pendo.io/agent/static/b5a0922b-701b-4f43-6293-65570fda0729/pendo.js",(d=i.getElementsByTagName(e)[0]).parentNode.insertBefore(s,d)}(window,document,"script","pendo"),pendo.initialize({visitor:{id:visitorParam||visitor||"VISITOR-UNIQUE-ID",role:role||"user"},account:{id:accountParam||account_id}})</script><title>Pendo Experience</title><link href="/ps-sandbox/static/css/main.7c93a296.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script type="text/javascript" src="/ps-sandbox/static/js/main.74768fc1.js"></script></body></html>
