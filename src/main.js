@@ -11,11 +11,11 @@ import FinalDetails from './containers/details/detailsContainer.js';
 const Main = () => (
     <main>
         <Switch>
-            <Route exact path ='/' component={Dashboard}/>
-            <Route exact path='/accounts' component={accountList} />
-            <Route exact path='/contacts' component={FinalContacts} />
-            <Route exact path='/opportunities' component={FinalOpportunities} />
-            <Route path='/*/*/details' component={FinalDetails} />
+            <Route exact path ='/ps-sandbox/' component={Dashboard}/>
+            <Route exact path='/ps-sandbox/accounts' component={accountList} />
+            <Route exact path='/ps-sandbox/contacts' component={FinalContacts} />
+            <Route exact path='/ps-sandbox/opportunities' component={FinalOpportunities} />
+            <Route path='/ps-sandbox/*/*/details' component={FinalDetails} />
         </Switch>
     </main>
 );

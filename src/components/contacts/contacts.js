@@ -13,7 +13,7 @@ const columns = [{
   dataIndex: 'name',
   key: 'name',
   width: 150,
-  render: (text,record) => <Link to={"/contacts/" + record._id +"/details"}><span>{text}</span></Link>,
+  render: (text,record) => <Link to={"/ps-sandbox/contacts/" + record._id +"/details"}><span>{text}</span></Link>,
 }, {
   title: 'Account',
   dataIndex: 'account',

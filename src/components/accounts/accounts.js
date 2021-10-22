@@ -10,7 +10,7 @@ const columns = [{
   dataIndex: 'name',
   key: 'name',
   width: 150,
-  render: (text,record) => <Link to={"/accounts/" + record._id +"/details"}><span>{text}</span></Link>
+  render: (text,record) => <Link to={"/ps-sandbox/accounts/" + record._id +"/details"}><span>{text}</span></Link>
 }, {
   title: 'Rep',
   dataIndex: 'rep',

@@ -22,25 +22,25 @@ const Navigation = ({onNavClick}) => (
 			id="main-menu"
 		>
 			<Menu.Item key="1">
-				<Link to='/' onClick={() => onNavClick('Dashboard')}>
+				<Link to='/ps-sandbox/' onClick={() => onNavClick('Dashboard')}>
 					<Icon type="home" />
 					<span>Dashboard</span>
 				</Link>
 			</Menu.Item>
 			<Menu.Item key="2">
-				<Link to='/accounts' onClick={() => onNavClick('Accounts')}>
+				<Link to='/ps-sandbox/accounts' onClick={() => onNavClick('Accounts')}>
 					<Icon type="team" />
 					<span>Accounts</span>
 				</Link>
 			</Menu.Item>
 			<Menu.Item key="3">
-				<Link to='/contacts' onClick={() => onNavClick('Contacts')}>
+				<Link to='/ps-sandbox/contacts' onClick={() => onNavClick('Contacts')}>
 					<Icon type="contacts" />
 					<span>Contacts</span>
 				</Link>
 			</Menu.Item>
 			<Menu.Item key="4">
-				<Link to='/opportunities' onClick={() => onNavClick('Opportunities')}>
+				<Link to='/ps-sandbox/opportunities' onClick={() => onNavClick('Opportunities')}>
 					<Icon type="folder-open" />
 					<span>Opportunities</span>
 				</Link>
