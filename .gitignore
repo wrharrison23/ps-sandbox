@@ -1,2 +1,15 @@
 node_modules/
 build/
+*.swp
+*.swo
+*.sublime*
+node_modules/*
+dist/*
+coverage/*
+.DS_Store
+versions.json
+.idea
+internal-extensions/dist/*
+*.csv
+.vscode
+*.log
