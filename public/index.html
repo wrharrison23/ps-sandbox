@@ -135,11 +135,9 @@
 <!-- End of core10 Zendesk Widget script -->
 <script>
     window.zE('webWidget', 'hide');
-    document.getElementById('webWidget').addEventListener('click', function(e) {
-        if(e.target.classList.contains('sc-htpNat')) {
+    zE('webWidget:on', 'close', function () {
             window.zE('webWidget', 'hide');
-        }
-    })
+        });
 </script>
 
     <!-- DON'T FORGET PROPER METADATA! -->
