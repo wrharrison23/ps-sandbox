@@ -135,8 +135,8 @@
 <!-- End of core10 Zendesk Widget script -->
 <script>
     window.zE('webWidget', 'hide');
-    document.addEventListener('click', function(e) {
-        if(e.target && e.target.classList.contains('sc-htpNat') ) {
+    document.getElementById('webWidget').addEventListener('click', function(e) {
+        if(e.target.classList.contains('sc-htpNat')) {
             window.zE('webWidget', 'hide');
         }
     })
