@@ -135,9 +135,11 @@
 <!-- End of core10 Zendesk Widget script -->
 <script>
     window.zE('webWidget', 'hide');
-    document.querySelector('[aria-label="Minimize widget"]').onClick(() => {
-        window.zE('webWidget', 'hide');
-    });
+    document.addEventListener('click', function(e) {
+        if(e.target && e.target.classList.contains('sc-htpNat') ) {
+            window.zE('webWidget', 'hide');
+        }
+    })
 </script>
 
     <!-- DON'T FORGET PROPER METADATA! -->
