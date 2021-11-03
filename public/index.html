@@ -130,15 +130,7 @@
         );
     </script>
 <!-- Start of core10 Zendesk Widget script -->
-<script id="ze-snippet"
-    src="https://static.zdassets.com/ekr/snippet.js?key=b85f13ff-0bff-42e9-a336-bc644e29f160"> </script>
-<!-- End of core10 Zendesk Widget script -->
-<script>
-    window.zE('webWidget', 'hide');
-    zE('webWidget:on', 'close', function () {
-            window.zE('webWidget', 'hide');
-        });
-</script>
+
 
     <!-- DON'T FORGET PROPER METADATA! -->
 
@@ -161,9 +153,11 @@ Learn how to configure a non-root public URL by running `npm run build`.
     <noscript>
         You'll need to enable JavaScript to run this app.
     </noscript>
-    <script>var chat = Quiq({
-            contactPoint: 'default'
-        });</script>
+    <script>
+        var chat = Quiq({
+            contactPoint: "client-relation",
+        });
+    </script>
     <div id="root"></div>
 
     <!--
