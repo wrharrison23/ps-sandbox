@@ -11,7 +11,8 @@
 -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-
+    <script id="ze-snippet"
+        src="https://static.zdassets.com/ekr/snippet.js?key=b85f13ff-0bff-42e9-a336-bc644e29f160"> </script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <script type="text/javascript">
         var accounts = [
@@ -163,6 +164,20 @@ Learn how to configure a non-root public URL by running `npm run build`.
                 bottom: '75px',
                 left: 'auto'
             }
+        });
+    </script>
+    <script>
+        window.zE('webWidget', 'hide');
+        window.zESettings = {
+                webWidget: {
+                    offset: {
+                        horizontal: '10px',
+                        vertical: '75px'
+                    }
+                }
+            };
+        zE('webWidget:on', 'close', function () {
+            window.zE('webWidget', 'hide');
         });
     </script>
     <div id="root">
