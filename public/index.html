@@ -16,8 +16,6 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script type="text/javascript"
-        src="https://wrharrison.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-T/-9zew5j/b/7/c95134bc67d3a521bb3f4331beb9b804/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&collectorId=9cc3339d"></script>
     <script type="text/javascript">
         var accounts = [
             "Stark Industries",
@@ -148,10 +146,6 @@ Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
 work correctly both with client-side routing and a non-root public URL.
 Learn how to configure a non-root public URL by running `npm run build`.
 -->
-<!-- Start of pendoio3105 Zendesk Widget script -->
-<script id="ze-snippet"
-    src="https://static.zdassets.com/ekr/snippet.js?key=8f34d088-3362-44f8-902a-8f39a2fc3c55"> </script>
-<!-- End of pendoio3105 Zendesk Widget script -->
 
 
     <title>Pendo Experience</title>
@@ -177,36 +171,6 @@ Learn how to configure a non-root public URL by running `npm run build`.
     To begin the development, run `npm start` or `yarn start`.
     To create a production bundle, use `npm run build` or `yarn build`.
 -->
-<script>
-    window.zE('webWidget', 'hide');
-    window.zESettings = {
-        webWidget: {
-            offset: {
-                horizontal: '10px',
-                vertical: '75px'
-            }
-        }
-    };
-    zE('webWidget:on', 'close', function () {
-        window.zE('webWidget', 'hide');
-        //pendo.onGuideDismissed()
-    });
-</script>
-<script type="text/javascript">
-    let jiraBtn = document.createElement('button')
-    jiraBtn.setAttribute('id', 'open-jira')
-
-
-    window.ATL_JQ_PAGE_PROPS = {
-        "triggerFunction": function (showCollectorDialog) {
-            //Requires that jQuery is available! 
-            jQuery("#open-jira").click(function (e) {
-                e.preventDefault();
-                showCollectorDialog();
-            });
-        }
-    }</script>
-    <button id="open-jira" style="display:none;"></button>
 </body>
 
 </html>
